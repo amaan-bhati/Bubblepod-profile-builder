@@ -1,14 +1,8 @@
-
 let sections = document.querySelectorAll("section");
 let sectionHeight = sections[0].offsetHeight;
 let headerHeight = document.querySelector("header").offsetHeight;
 let dots = document.querySelectorAll('.dot');
-
 let scroll = document.querySelector('.scroll');
-
-///////  FOR PARALLAX AND NAV-DOTS
-
-
 let num = (window.scrollY - headerHeight) /sectionHeight;
 num = Math.round(num);
 num = Math.abs(num);
@@ -96,11 +90,6 @@ let parallax = (index)=>{
 
     }
 }
-
-//*********** parallax ends */
-
-/////////////// FOR VIDEO PLAYER
-
 document.querySelector('#play').addEventListener('click',function(){
     document.querySelector('.overlay').style.display = "block";
     document.querySelector('video').play();
@@ -111,11 +100,6 @@ document.querySelector('.close-icon').addEventListener('click',function(){
     document.querySelector('video').pause();
     document.querySelector('video').currentTime = 0;
 })
-
-// ***************** video player ends 
-
-/////////  FOR SLIDERS
-
 let slides = document.querySelectorAll('.slides');
 let more = document.querySelector('.more');
 count = 0;
@@ -165,15 +149,7 @@ more2.addEventListener('click', function(){
         count2++;
     }
 })
-
-//***********slider ends */
-
-
-//////////////// FOR LINES
-
 window.addEventListener('resize',configureLines)
-
-
 function configureLines(){
     let lines = document.querySelectorAll('.line');
     let temp = 0;
@@ -188,9 +164,7 @@ function configureLines(){
         // console.log(arc);
         degree = arc * 180 / Math.PI;
         degree = - degree;
-        // console.log(degree);
-        
-    
+        // console.log(degree);  
         lines[temp].style.height = height+"px";
         lines[temp].style.left = left+"px";
         lines[temp].style.top = top+"px";
